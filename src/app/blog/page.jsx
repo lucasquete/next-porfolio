@@ -17,9 +17,6 @@ async function getData() {
 const Blog = async () => {
 
   const data = await getData();
-  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
-  // const { data, isLoading } = useSWR(`/api/posts`, fetcher);
 
   return (
     <div className={styles.mainContainer}>

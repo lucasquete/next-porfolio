@@ -6,7 +6,6 @@
     width: 82%;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .logo {
@@ -28,4 +27,53 @@
     color: white;
     cursor: pointer;
     border-radius: 3px;
+}
+
+.open {
+    width: 30px;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.line{
+    width: 100%;
+    height: 3px;
+    background-color: gray;
+}
+
+.sidebar {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: gray;
+    padding: 20px 30px;
+}
+
+.sideLinks {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.link:hover {
+    color: #53c28b;
+}
+
+@media (max-width:900px) {
+    .open {
+        display: flex; 
+    }
+
+    .links {
+        display: none;
+    }
+
 }

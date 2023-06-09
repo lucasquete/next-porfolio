@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./navbar.module.css";
 import DarkMode from '../darkmode/DarkMode';
 import { signOut, useSession } from 'next-auth/react';
@@ -42,11 +42,13 @@ const Navbar = () => {
 
   const session = useSession();
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className={styles.container}>
         <Link href={"/"} className={styles.logo}>Vahalla.ai</Link>
+        <DarkMode/>
         <div className={styles.links}>
-          <DarkMode/>
           {links.map((link) => (
               <Link href={link?.url} key={link?.id} className={styles.link}>{link?.title}</Link>
           ))}
@@ -54,6 +56,23 @@ const Navbar = () => {
             <button onClick={signOut} className={styles.logout}>Logout</button>
           )}
         </div>
+        <div className={styles.open} onClick={() => setIsOpen(!isOpen)}>
+          <div className={styles.line}/>
+          <div className={styles.line}/>
+          <div className={styles.line}/>
+        </div>
+        {isOpen && (  
+          <div className={styles.sidebar}>
+              <div className={styles.sideLinks}>
+                {links.map((link) => (
+                    <Link href={link?.url} key={link?.id} className={styles.link}>{link?.title}</Link>
+                ))}
+                {session.status === "authenticated" && (
+                  <button onClick={signOut} className={styles.logout}>Logout</button>
+                )}
+              </div>
+          </div>
+        )}
     </div>
   )
 }
