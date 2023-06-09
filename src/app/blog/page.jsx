@@ -1,9 +1,6 @@
-"use client"
-import React, { useEffect, useState } from 'react'
 import styles from "./blog.module.css"
 import Link from 'next/link'
 import Image from 'next/image'
-import useSWR from "swr"
 
 async function getData() {
   const res = await fetch(`https://next-porfolio-nu.vercel.app/api/posts`, {

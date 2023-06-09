@@ -1,8 +1,7 @@
-"use client"
 import React from 'react'
 import styles from "./post.module.css"
 import Image from 'next/image'
-import useSWR from "swr"
+import { notFound } from 'next/navigation';
 
 async function getData(id) {
   const res = await fetch(`https://next-porfolio-nu.vercel.app/api/posts/${id}`, {
