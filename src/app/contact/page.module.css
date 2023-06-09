@@ -1,5 +1,5 @@
 .container {
-    
+    margin-top: 100px;
 }
 
 .title {
@@ -51,4 +51,30 @@
     border: 3px solid #bbb;
     font-size: 20px;
     font-weight: bold;
+}
+
+@media (max-width:900px) {
+    .title {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    .imgContainer {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width:420px) {
+    .form {
+        width: 98%;
+    }
+   
 }

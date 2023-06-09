@@ -42,3 +42,35 @@
 .desc {
     font-size: 20px;
 }
+
+@media (max-width:900px) {
+    .item {
+        flex-direction: column;
+    }
+
+    .item:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .catTitle {
+        text-align: center;
+    }
+
+    .content {
+        flex: none;
+        text-align: center;
+    }
+    
+    .imgContainer {
+        flex: none;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+    
+    .desc {
+        font-size: 16px;
+    }
+
+}

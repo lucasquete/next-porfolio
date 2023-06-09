@@ -1,8 +1,12 @@
 .container {
+    position: fixed;
+    z-index: 20;
     height: 100px;
     display: flex;
+    width: 82%;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -14,6 +18,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .logout {

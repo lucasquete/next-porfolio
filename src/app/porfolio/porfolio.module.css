@@ -1,5 +1,6 @@
 .mainWork {
     font-size: 100px;
+    margin-top: 100px;
 }
 
 .container {
@@ -40,10 +41,46 @@
     position: absolute;
     right: 10px;
     bottom: 10px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .item:hover .title {
     color: #53c28b;
+}
+
+@media (max-width:900px) {
+    .mainWork {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .items {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .selectedTitle {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width:480px) {
+    .mainWork {
+        font-size: 40px;
+    }
+
+    .items {
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        font-size: 20px;
+    }
 }
