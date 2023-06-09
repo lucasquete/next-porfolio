@@ -5,28 +5,28 @@ import Link from 'next/link'
 import Image from 'next/image'
 import useSWR from "swr"
 
-// async function getData() {
-//   const res = await fetch(`https://localhost:3000/api/posts`, {
-//     cache: "no-cache",
-//   });
+async function getData() {
+  const res = await fetch(`https://next-porfolio-nu.vercel.app/api/posts`, {
+    cache: "no-cache",
+  });
 
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch data!");
-//   }
+  if (!res.ok) {
+    throw new Error("Failed to fetch data!");
+  }
 
-//   return res.json();
-// }
+  return res.json();
+}
 
-const Blog = () => {
+const Blog = async () => {
 
-  // const data = await getData();
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const data = await getData();
+  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  const { data, isLoading } = useSWR(`/api/posts`, fetcher);
+  // const { data, isLoading } = useSWR(`/api/posts`, fetcher);
 
   return (
     <div className={styles.mainContainer}>
-      {isLoading ? (<h1>Loading</h1>) : data.map((item) => (
+      {data.map((item) => (
         <Link href={`/blog/${item?._id}`} className={styles.container} key={item?._id}>
           <div className={styles.imageContainer}>
             <Image

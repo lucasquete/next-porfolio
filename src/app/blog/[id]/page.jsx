@@ -4,41 +4,41 @@ import styles from "./post.module.css"
 import Image from 'next/image'
 import useSWR from "swr"
 
-// async function getData(id) {
-//   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-//     cache: "no-store",
-//   });
+async function getData(id) {
+  const res = await fetch(`https://next-porfolio-nu.vercel.app/api/posts/${id}`, {
+    cache: "no-store",
+  });
 
-//   if (!res.ok) {
-//     return notFound()
-//   }
+  if (!res.ok) {
+    return notFound()
+  }
 
-//   return res.json();
-// }
+  return res.json();
+}
 
-// export async function generateMetadata({ params }) {
-//   const post = await getData(params.id)
-//   return {
-//     title: post.title,
-//     description: post.desc,
-//   }
-// }
+export async function generateMetadata({ params }) {
+  const post = await getData(params.id)
+  return {
+    title: post.title,
+    description: post.desc,
+  }
+}
 
-const Post = ({params}) => {
+const Post = async ({params}) => {
 
-  // const data = await getData(params.id);
+  const data = await getData(params.id);
 
-  const id = params.id;
+  // const id = params.id;
 
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  const { data, isLoading } = useSWR(`/api/posts/${id}`, fetcher);
+  // const { data, isLoading } = useSWR(`/api/posts/${id}`, fetcher);
 
-  if (isLoading) {
-    return (
-      <h1>Loading</h1>
-    )
-  } else {
+  // if (isLoading) {
+  //   return (
+  //     <h1>Loading</h1>
+  //   )
+  // } else {
     return (
       <div className={styles.container}>
         <div className={styles.top}>
@@ -74,7 +74,7 @@ const Post = ({params}) => {
         </div>
       </div>
     )
-  }
+  // }
 
 }
 
