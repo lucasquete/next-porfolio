@@ -1,10 +1,11 @@
 .container {
-    height: 50px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
     margin-top: 50px;
+    gap: 20px;
 }
 
 

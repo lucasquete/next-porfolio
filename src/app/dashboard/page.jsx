@@ -72,10 +72,10 @@ const Dashboard = () => {
         </div>
         <form className={styles.new} onSubmit={handleSubmit}>
           <h1>Add new post</h1>
-          <input type="text" placeholder="Title" className={styles.input}/>
-          <textarea placeholder="Description" className={styles.textarea} cols="30" rows="10"></textarea>
-          <input type="text" placeholder="Image" className={styles.input} />
-          <textarea placeholder="Content" className={styles.textarea} cols="30" rows="10"></textarea>
+          <input type="text" placeholder="Title" className={styles.input} required/>
+          <textarea placeholder="Description" className={styles.textarea} cols="30" rows="10" required></textarea>
+          <input type="text" placeholder="Image" className={styles.input} required/>
+          <textarea placeholder="Content" className={styles.textarea} cols="30" rows="10" required></textarea>
           <button className={styles.button}>Send</button>
         </form>
       </div>
