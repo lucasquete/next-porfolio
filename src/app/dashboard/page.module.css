@@ -33,9 +33,27 @@
     object-fit: cover;
 }
 
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.delete_btn, .update_btn {
+    border: none;
+    background-color: rgb(250, 48, 48);
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.update_btn {
+    background-color: rgb(109, 109, 240);
+}
+
 .delete {
     cursor: pointer;
-    color: red;
+    color: white;
+    font-size: 28px;
 }
 
 .new {
@@ -67,11 +85,15 @@
 @media (max-width:900px) {
     .container {
         gap: 50px;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     
     .posts {
         flex: none;
+    }
+
+    .postTitle {
+        max-width: 130px;
     }
 }
 

@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 import useSWR from "swr"
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import {AiFillDelete, AiFillEdit} from "react-icons/ai"
+import Link from "next/link";
 
 const Dashboard = () => {
 
@@ -66,7 +68,16 @@ const Dashboard = () => {
                 <Image src={item?.img} fill={true} alt="" className={styles.img}/>
               </div>
               <h2 className={styles.postTitle}>{item?.title}</h2>
-              <span className={styles.delete} onClick={() => handleDelete(item?._id)}>X</span>
+              <div className={styles.btns}>
+                <button className={styles.delete_btn}>
+                  <AiFillDelete className={styles.delete} onClick={() => handleDelete(item?._id)}/>
+                </button>
+                <Link href={"/dashboard/edit/" + item?._id}>
+                  <button className={styles.update_btn}>
+                    <AiFillEdit className={styles.delete}/>
+                  </button>
+                </Link>
+              </div>
             </div>
           ))}
         </div>

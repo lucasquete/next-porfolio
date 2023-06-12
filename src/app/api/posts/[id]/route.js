@@ -33,3 +33,23 @@ export const DELETE = async (request, { params }) => {
     }
 
 }
+
+export const PUT = async (request, { params }) => {
+    
+    const { id } = params;
+
+    const body = await request.json();
+
+    const { title, desc, img, content } = body;
+
+    try {
+        await connect();
+
+        const post = await Post.findByIdAndUpdate(id, {title, desc, img, content});
+
+        return new NextResponse("Post has been updated", {status: 200})
+    } catch (error) {
+        return new NextResponse("Database error!", {status: 500})
+    }
+
+}

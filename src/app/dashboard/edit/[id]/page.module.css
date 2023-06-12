@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.new {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 65%;
+}
+
+.input, .textarea {
+    padding: 10px;
+    border: 2px solid #bbb;
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 3px;
+    color: #bbb;
+    font-weight: bold;
+}
+
+.button {
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #53c28b;
+    color: white;
+}
+
+
+@media (max-width:900px) {
+    .new {
+        width: 98%;
+    }
+}
