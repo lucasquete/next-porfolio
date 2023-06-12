@@ -21,7 +21,7 @@
 }
 
 .logout {
-    padding: 5px;
+    padding: 10px;
     border: none;
     background-color: #53c28b;
     color: white;
@@ -64,7 +64,7 @@
 
 .link {
     text-align: center;
-    padding: 10px 15px;
+    padding: 15px 20px;
 }
 
 .link:hover {
