@@ -71,7 +71,7 @@
     color: #53c28b;
 }
 
-@media (max-width:900px) {
+@media (max-width:1080px) {
     .open {
         display: flex; 
     }

@@ -43,7 +43,7 @@ const Post = async ({params}) => {
               height={40}
               className={styles.avatar}
             />
-            <span className={styles.username}>{data?.username}</span>
+            <span className={styles.username}><span style={{color: "#58c28b"}}>Posted By </span> {data?.username}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>

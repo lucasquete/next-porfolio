@@ -64,10 +64,14 @@ const Dashboard = () => {
         <div className={styles.posts}>
           {isLoading ? "Loading" : data?.map((item) => (
             <div className={styles.post} key={item?._id}>
-              <div className={styles.ImageContainer}>
-                <Image src={item?.img} fill={true} alt="" className={styles.img}/>
-              </div>
-              <h2 className={styles.postTitle}>{item?.title}</h2>
+              <Link href={"/blog/" + item?._id}>
+                <div className={styles.ImageContainer}>
+                  <Image src={item?.img} fill={true} alt="" className={styles.img}/>
+                </div>
+              </Link>
+              <Link href={"/blog/" + item?._id}>
+                <h2 className={styles.postTitle}>{item?.title}</h2>
+              </Link>
               <div className={styles.btns}>
                 <button className={styles.delete_btn}>
                   <AiFillDelete className={styles.delete} onClick={() => handleDelete(item?._id)}/>
