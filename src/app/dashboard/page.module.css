@@ -95,6 +95,10 @@
     .postTitle {
         max-width: 130px;
     }
+
+    .title {
+        text-align: center;
+    }
 }
 
 @media (max-width:590px) {

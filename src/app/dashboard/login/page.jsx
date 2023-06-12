@@ -44,7 +44,9 @@ const Login = () => {
         <input type="email" placeholder='Email' className={styles.input} required/>
         <input type="password" placeholder='Password' className={styles.input} required />
         <button className={styles.button}>Login</button>
-        {error && error}
+        {error && (
+          <div className={styles.error}>{error}</div>
+        )}
       </form>
       <button onClick={() => signIn("google")} className={styles.button + " " + styles.google}>Login with google</button>
       <span className={styles.or}>- OR -</span>

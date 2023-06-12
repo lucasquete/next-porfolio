@@ -24,6 +24,16 @@
     color: #bbb;
 }
 
+.error {
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+
 .button {
     border: none;
     cursor: pointer;

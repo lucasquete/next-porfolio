@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import {AiFillDelete, AiFillEdit} from "react-icons/ai"
 import Link from "next/link";
+import Loading from "@/components/loading/Loading";
 
 const Dashboard = () => {
 
@@ -62,7 +63,8 @@ const Dashboard = () => {
     return (
       <div className={styles.container}>
         <div className={styles.posts}>
-          {isLoading ? "Loading" : data?.map((item) => (
+          <h1 className={styles.title}>Delete or edit your posts</h1>
+          {isLoading ? <Loading/> : data?.map((item) => (
             <div className={styles.post} key={item?._id}>
               <Link href={"/blog/" + item?._id}>
                 <div className={styles.ImageContainer}>
@@ -86,7 +88,7 @@ const Dashboard = () => {
           ))}
         </div>
         <form className={styles.new} onSubmit={handleSubmit}>
-          <h1>Add new post</h1>
+          <h1 className={styles.title}>Add new post</h1>
           <input type="text" placeholder="Title" className={styles.input} required/>
           <textarea placeholder="Description" className={styles.textarea} cols="30" rows="10" required></textarea>
           <input type="text" placeholder="Image" className={styles.input} required/>

@@ -40,7 +40,9 @@ const Register = () => {
         <input type="password" placeholder='Password' className={styles.input} required />
         <button className={styles.button}>Register</button>
       </form>
-      {err && "Something went wrond!"}
+      {err && (
+          <div className={styles.error}>Something went wrong!</div>
+        )}
       <Link href={"/dashboard/login"}>
         Login with an existing account
       </Link>
