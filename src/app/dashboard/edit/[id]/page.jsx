@@ -14,7 +14,7 @@ const Edit = ({ params }) => {
 
     const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-    const { data } = useSWR(`http://localhost:3000/api/posts/${id}`, fetcher);
+    const { data } = useSWR(`https://next-porfolio-nu.vercel.app/api/posts/${id}`, fetcher);
 
     useEffect(() => {
         if (!data) return;
